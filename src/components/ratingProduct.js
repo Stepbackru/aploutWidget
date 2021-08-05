@@ -7,7 +7,7 @@ const RatingProduct = (props) => {
     <span className="rating__value">{props.data.product.rating}</span>
     <RatingStars rating={props.data.product.rating} countStars={props.countStars}/>
     <p className="recommends">На основе
-      <span className="recommends__count"> {props.data.product.recommended} оценок</span>
+      <span className="recommends__count"> {props.data.product.reviews_count} оценок</span>
     </p>
   </div>);
 }
