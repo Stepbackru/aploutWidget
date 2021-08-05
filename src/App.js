@@ -33,10 +33,12 @@ class App extends Component{
     <section className="widget">
       <header className="widget__header">
       {this.state.data && 
-        <RatingProduct rating={this.state.data.product.rating}
+        <RatingProduct data={this.state.data}
           countStars={this.countStars}/>
       }
+      <button className="widget__write">Написать отзыв</button>
       </header>
+
     </section>)    
   }
 }
