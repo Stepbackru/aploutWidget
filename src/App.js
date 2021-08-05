@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import RatingProduct from './components/ratingProduct';
+import PhotoProduct from './components/photoProduct';
 class App extends Component{
   constructor(props){
     super(props);
@@ -38,7 +39,7 @@ class App extends Component{
       }
       <button className="widget__write">Написать отзыв</button>
       </header>
-
+      {this.state.data && <PhotoProduct data={this.state.data}/>}
     </section>)    
   }
 }
