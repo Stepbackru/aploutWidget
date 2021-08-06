@@ -9,6 +9,7 @@ const Comments = (props) => {
           return (
             <div className="comment__item">
               <HeaderComment data={el} countStars={props.countStars}/>
+              <p className="comment__review">{el.body}</p>
             </div>
           );
         })
