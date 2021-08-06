@@ -15,7 +15,7 @@ const Comments = (props) => {
           );
         })
       }
-      
+      <button className="comment__more">Загрузить еще</button>
     </section>
   )
 }
