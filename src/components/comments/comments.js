@@ -1,4 +1,5 @@
 import HeaderComment from "./headerComment";
+import BodyComment from "./bodyComment";
 
 const Comments = (props) => {
 
@@ -9,15 +10,12 @@ const Comments = (props) => {
           return (
             <div key={el.id} className="comment__item">
               <HeaderComment data={el} countStars={props.countStars}/>
-              <p className="comment__review">{el.body}</p>
-              <div className="comment_btns">
-                <button className="comment__btn comment__btn_like"></button>
-                <button className="comment__btn comment__btn_dislike"></button>
-              </div>
+              <BodyComment data={el}/>
             </div>
           );
         })
       }
+      
     </section>
   )
 }
