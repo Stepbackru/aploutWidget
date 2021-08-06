@@ -3,18 +3,24 @@ import HeaderComment from "./headerComment";
 import BodyComment from "./bodyComment";
 
 class Comments extends Component{
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      comments: props.data.reviews,
+      comments: [],
     }
+    this.loadCommentMore = this.loadCommentMore.bind(this);
+  }
+
+  loadCommentMore(e) {
+    e.preventDefault();
+    this.props.loadComments('isClicked');
   }
 
   render() {
     return (
       <section className="comment">
         {
-          this.state.comments.map((el) => {
+          this.props.data.reviews.map((el) => {
             return (
               <div key={el.id} className="comment__item">
                 <HeaderComment data={el} countStars={this.props.countStars}/>
@@ -23,7 +29,7 @@ class Comments extends Component{
             );
           })
         }
-        <button className="comment__more">Загрузить еще</button>
+        <button className="comment__more" onClick={this.loadCommentMore}>Загрузить еще</button>
       </section>
     )
   }
