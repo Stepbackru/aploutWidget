@@ -13,7 +13,7 @@ const HeaderComment = (props) => {
     <header className="comment__header">
       <div className="author">
         <p className="author__name">{props.data.author.name}</p>
-        <div className="author__name-detail">
+        <div className="author__rating-detail">
           <RatingStars rating={props.data.rating} countStars={props.countStars}/>
           <p className="author__detail">
             {timeUsage ? `${timeUsage.label}: ${timeUsage.value}` : null}
