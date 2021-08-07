@@ -6,23 +6,27 @@ class Comments extends Component{
   constructor(props) {
     super(props);
     this.state = {
-      comments: [],
+      setNewKey: false,
     }
+
     this.loadCommentMore = this.loadCommentMore.bind(this);
   }
 
   loadCommentMore(e) {
     e.preventDefault();
-    this.props.loadComments('isClicked');
+    if (this.props.data.meta.current_page !== this.props.data.meta.total_page) {
+      this.props.loadComments('isClicked');
+      this.setState({setNewKey: true},);
+    }
   }
 
   render() {
     return (
       <section className="comment">
         {
-          this.props.data.reviews.map((el) => {
+          this.props.reviews.map((el, ind) => {
             return (
-              <div key={el.id} className="comment__item">
+              <div key={!this.state.setNewKey ? el.id : el.id+ind.toString()} className="comment__item">
                 <HeaderComment data={el} countStars={this.props.countStars}/>
                 <BodyComment data={el}/>
               </div>

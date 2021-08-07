@@ -12,6 +12,7 @@ class App extends Component{
       data: null,
       totalPage: null,
       currentPage: 1,
+      reviews: [],
     }
     this.getDataFromApi = this.getDataFromApi.bind(this);
     this.addMoreComments = this.addMoreComments.bind(this);
@@ -28,27 +29,20 @@ class App extends Component{
     
     this.setState({
       data: dataJSON,
-      totalPage: dataJSON.meta.total_pages
+      totalPage: dataJSON.meta.total_pages,
+      currentPage: this.state.currentPage + 1, 
+      reviews: [...this.state.reviews, ...dataJSON.reviews],
     })
   }
 
   addMoreComments(click) {
-    const expressionNextPage = this.state.currentPage < this.state.totalPage ? 
-      this.state.currentPage + 1 : this.state.currentPage;
-    
     if (click) {
-      console.log(this.state.totalPage)
-      this.setState({ 
-        currentPage: expressionNextPage, 
-      });
+      this.getDataFromApi();
     }
+    
   }
 
   componentDidMount(){
-    this.getDataFromApi();
-  }
-
-  componentDidUpdate(){
     this.getDataFromApi();
   }
 
@@ -66,7 +60,8 @@ class App extends Component{
       {this.state.data && <FilterComments />}
       {this.state.data && 
         <Comments 
-          data={this.state.data} 
+          data={this.state.data}
+          reviews={this.state.reviews}
           countStars={this.countStars}
           loadComments={this.addMoreComments}/>}
     </section>)    
