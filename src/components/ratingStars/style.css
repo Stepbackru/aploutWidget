@@ -1,10 +1,11 @@
 .stars {
+  padding-left: 10px;
   display: flex;
   align-items: center;
+  gap: 5px;
 }
 
 .stars__item {
-  margin: 0 5px;
   width: 18px;
   height: 18px;
   background-repeat: no-repeat;
