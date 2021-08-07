@@ -16,6 +16,15 @@
   align-items: center;
 }
 
+
+.widget__header .stars__item {
+  filter: invert(73%) sepia(55%) saturate(1%) hue-rotate(11deg) brightness(98%) contrast(99%);
+}
+
+.widget__header .rating {
+  max-width: 250px;
+}
+
 .widget__write {
   width: 250px;
   border-radius: 20px;
@@ -25,8 +34,4 @@
   color: #ffffff;
   text-align: center;
   background: #000000;
-}
-
-.widget__header .stars__item {
-  filter: invert(73%) sepia(55%) saturate(1%) hue-rotate(11deg) brightness(98%) contrast(99%);
 }
