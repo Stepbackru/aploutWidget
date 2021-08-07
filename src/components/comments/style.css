@@ -11,11 +11,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .author__name-detail {
   padding: 10px 0;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .author__detail {
