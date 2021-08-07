@@ -1,4 +1,32 @@
 @import './assets/css/clear.css';
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
+.widget {
+  margin: 0 auto;
+  padding: 40px;
+  max-width: 900px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
 
+.widget__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.widget__write {
+  width: 250px;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 45px;
+  color: #ffffff;
+  text-align: center;
+  background: #000000;
+}
+
+.widget__header .stars__item {
+  filter: invert(73%) sepia(55%) saturate(1%) hue-rotate(11deg) brightness(98%) contrast(99%);
+}
