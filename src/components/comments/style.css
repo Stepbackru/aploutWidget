@@ -29,6 +29,11 @@
   font-size: 14px;
 }
 
+.comment__date {
+  font-size: 14px;
+  font-weight: 400;
+}
+
 .comment__btns {
   padding-top: 30px;
   display: flex;
