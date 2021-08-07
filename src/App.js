@@ -6,7 +6,7 @@ import PhotoProduct from './components/photoProduct/photoProduct';
 import FilterComments from './components/filterComments/filterComments';
 import Comments from './components/comments/comments'
 
-class App extends Component{
+class App extends Component {
   constructor(props){
     super(props);
     this.countStars = 5;
@@ -15,9 +15,11 @@ class App extends Component{
       totalPage: null,
       currentPage: 1,
       reviews: [],
+      sortReviewsDate: null,
     }
     this.getDataFromApi = this.getDataFromApi.bind(this);
     this.addMoreComments = this.addMoreComments.bind(this);
+    this.sortReviewsHandle = this.sortReviewsHandle.bind(this);
   }
 
   async getDataFromApi() {
@@ -41,7 +43,10 @@ class App extends Component{
     if (click) {
       this.getDataFromApi();
     }
-    
+  }
+
+  sortReviewsHandle(sort) {
+    this.setState({sortReviewsDate: [...sort]});
   }
 
   componentDidMount(){
@@ -59,11 +64,15 @@ class App extends Component{
         <button className="widget__write">Написать отзыв</button>
       </header>
       {this.state.data && <PhotoProduct data={this.state.data}/>}
-      {this.state.data && <FilterComments />}
+      {this.state.data && 
+        <FilterComments 
+          data={this.state.data}
+          sortReviews={this.sortReviewsHandle}/>}
       {this.state.data && 
         <Comments 
           data={this.state.data}
           reviews={this.state.reviews}
+          sortReviews={this.state.sortReviewsDate}
           countStars={this.countStars}
           loadComments={this.addMoreComments}/>}
     </section>)    

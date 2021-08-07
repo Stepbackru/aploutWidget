@@ -10,6 +10,7 @@ class Comments extends Component{
     this.state = {
       setNewKey: false,
       currentPage: 1,
+      perPage: this.props.data.meta.per_page,
     }
 
     this.loadCommentMore = this.loadCommentMore.bind(this);
@@ -21,6 +22,7 @@ class Comments extends Component{
     this.setState({
       setNewKey: true,
       currentPage: this.state.currentPage + 1,
+      perPage: this.state.perPage + this.props.data.meta.per_page,
     });
   }
 
@@ -28,7 +30,16 @@ class Comments extends Component{
     return (
       <section className="comment">
         {
-          this.props.reviews.map((el, ind) => {
+          this.props.sortReviews ?
+          this.props.sortReviews.slice(0,this.state.perPage).map((el, ind) => {
+            return (
+              <div key={!this.state.setNewKey ? el.id : el.id+ind.toString()} className="comment__item">
+                <HeaderComment data={el} countStars={this.props.countStars}/>
+                <BodyComment data={el}/>
+              </div>
+            );
+          }) :
+          this.props.reviews.slice(0,this.state.perPage).map((el, ind) => {
             return (
               <div key={!this.state.setNewKey ? el.id : el.id+ind.toString()} className="comment__item">
                 <HeaderComment data={el} countStars={this.props.countStars}/>
