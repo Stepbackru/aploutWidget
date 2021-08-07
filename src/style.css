@@ -33,5 +33,12 @@
   line-height: 45px;
   color: #ffffff;
   text-align: center;
+  border: 1px solid #000000;
   background: #000000;
+  transition: .3s;
+}
+
+.widget__write:hover {
+  background: #ffffff;
+  color: #000000;
 }
