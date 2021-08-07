@@ -1,0 +1,8 @@
+@media (max-width: 579px) {
+  .filter-comments {
+    flex-direction: column;
+  }
+  .filter-comments__title {
+    display: none;
+  }
+}

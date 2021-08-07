@@ -1,0 +1,25 @@
+.stars {
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.stars__item {
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.stars__item_on {
+  background-image: url(../../assets/icons/starfull.svg);
+}
+
+.stars__item_off {
+  background-image: url(../../assets/icons/emptystar.svg);
+}
+
+.stars__item_half {
+  background-image: url(../../assets/icons/halfstar.svg);
+}

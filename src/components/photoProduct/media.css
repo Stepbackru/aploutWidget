@@ -1,0 +1,6 @@
+@media (max-width: 579px) {
+  .slider__item {
+    width: 100px;
+    height: 100px;
+  }
+}
