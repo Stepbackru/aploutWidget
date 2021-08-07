@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './style.css';
+import './media.css';
 import HeaderComment from "./headerComment";
 import BodyComment from "./bodyComment";
 

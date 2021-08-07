@@ -1,0 +1,23 @@
+
+@media (max-width: 579px) {
+  .comment__header {
+    padding-bottom: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .author__rating-detail {
+    padding: 5px 0;
+    flex-direction: column;
+  }
+
+  .author__detail {
+    padding: 5px 0 0;
+    font-size: 13px;
+  }
+
+  .comment__review {
+    text-align: justify;
+  }
+}

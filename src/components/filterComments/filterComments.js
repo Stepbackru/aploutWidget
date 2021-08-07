@@ -1,4 +1,5 @@
 import './style.css';
+import './media.css';
 
 const FilterComments = (props) => {
   const date = new Date();

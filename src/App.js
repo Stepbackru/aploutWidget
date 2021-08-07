@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './style.css';
+import './media.css';
 import RatingProduct from './components/ratingProduct/ratingProduct';
 import PhotoProduct from './components/photoProduct/photoProduct';
 import FilterComments from './components/filterComments/filterComments';

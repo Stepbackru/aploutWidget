@@ -1,4 +1,5 @@
 import './style.css';
+import './media.css';
 
 const PhotoProduct = (props) => {
 
