@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import RatingProduct from './components/ratingProduct';
-import PhotoProduct from './components/photoProduct';
-import FilterComments from './components/filterComments';
+import './style.css';
+import RatingProduct from './components/ratingProduct/ratingProduct';
+import PhotoProduct from './components/photoProduct/photoProduct';
+import FilterComments from './components/filterComments/filterComments';
 import Comments from './components/comments/comments'
 
 class App extends Component{
@@ -50,11 +51,11 @@ class App extends Component{
     return (
     <section className="widget">
       <header className="widget__header">
-      {this.state.data && 
-        <RatingProduct data={this.state.data}
-          countStars={this.countStars}/>
-      }
-      <button className="widget__write">Написать отзыв</button>
+        {this.state.data && 
+          <RatingProduct data={this.state.data}
+            countStars={this.countStars}/>
+        }
+        <button className="widget__write">Написать отзыв</button>
       </header>
       {this.state.data && <PhotoProduct data={this.state.data}/>}
       {this.state.data && <FilterComments />}

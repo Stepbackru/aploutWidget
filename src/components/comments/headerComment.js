@@ -1,4 +1,4 @@
-import RatingStars from '../ratingStars';
+import RatingStars from '../ratingStars/ratingStars';
 
 
 const HeaderComment = (props) => {

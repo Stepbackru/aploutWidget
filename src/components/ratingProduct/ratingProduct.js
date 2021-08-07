@@ -1,4 +1,5 @@
-import RatingStars from './ratingStars';
+import './style.css';
+import RatingStars from '../ratingStars/ratingStars';
 
 const RatingProduct = (props) => {
 
