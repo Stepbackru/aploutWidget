@@ -1,6 +1,5 @@
 import RatingStars from '../ratingStars/ratingStars';
 
-
 const HeaderComment = (props) => {
   let timeUsage = null;
 
@@ -20,9 +19,20 @@ const HeaderComment = (props) => {
           </p>
         </div>
       </div>
-      <p className="comment__date">${props.data.created_at}</p>
+      <p className="comment__date">{getDateOfPost(props.data.created_at)}</p>
     </header>
   )
+}
+
+const getDateOfPost = (time) => {
+  const date = new Date(time);
+  const settings = {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  };
+
+  return date.toLocaleDateString(`ru`, settings);
 }
 
 export default HeaderComment; 
