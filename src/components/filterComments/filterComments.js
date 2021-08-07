@@ -1,3 +1,5 @@
+import './style.css';
+
 const FilterComments = (props) => {
   const date = new Date();
   const year = date.getFullYear();
@@ -9,8 +11,8 @@ const FilterComments = (props) => {
   <div className="filter-comments">
     <p className="filter-comments__title">Сортировать:</p>
     <select className="filter-comments__choice">
-      <option value={`created_at:lt:${today}`}>Новые</option>
-      <option value={`created_at:gt:${today}`}>Старые</option>
+      <option value={`created_at:lt:${today}`}>Сначала новые</option>
+      <option value={`created_at:gt:${today}`}>Сначала старые</option>
     </select>
   </div>);
 }
