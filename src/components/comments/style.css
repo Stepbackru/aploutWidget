@@ -1,0 +1,24 @@
+.comment__item {
+  padding: 20px 0;
+  border-top: 1px solid #cccccc;
+}
+
+.comment .stars {
+  padding: 0;
+}
+
+.comment__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.author__name-detail {
+  padding: 10px 0;
+  display: flex;
+}
+
+.author__detail {
+  padding-left: 10px;
+  font-size: 14px;
+}
