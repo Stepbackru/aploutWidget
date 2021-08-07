@@ -9,6 +9,7 @@ class Comments extends Component{
     super(props);
     this.state = {
       setNewKey: false,
+      currentPage: 1,
     }
 
     this.loadCommentMore = this.loadCommentMore.bind(this);
@@ -16,10 +17,11 @@ class Comments extends Component{
 
   loadCommentMore(e) {
     e.preventDefault();
-    if (this.props.data.meta.current_page !== this.props.data.meta.total_page) {
-      this.props.loadComments('isClicked');
-      this.setState({setNewKey: true},);
-    }
+    this.props.loadComments('isClicked');
+    this.setState({
+      setNewKey: true,
+      currentPage: this.state.currentPage + 1,
+    });
   }
 
   render() {
@@ -35,7 +37,12 @@ class Comments extends Component{
             );
           })
         }
-        <button className="comment__more" onClick={this.loadCommentMore}>Загрузить еще</button>
+        {
+          this.state.currentPage < this.props.data.meta.total_pages ?
+          <button className="comment__more" onClick={this.loadCommentMore}>Загрузить еще</button> :
+          null
+        }
+        
       </section>
     )
   }
